@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <bopit.h>
 #include <HardwareSerial.h>
+#include <SPI.h>
 
 const int COMPLETE_PIN = 6;
 
