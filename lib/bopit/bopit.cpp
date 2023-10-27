@@ -5,16 +5,20 @@
  * @returns bopit instance
 */
 BopIt::BopIt() {
-    slot_machine = SlotMachine();
-    roulette_machine = Roulette();
-    pachinko_machine = Pachinko();
-    coin_scanner = CoinScanner();
-    display = Display();
-    power_button = PowerButton();
+    //slot_machine = SlotMachine();
+    //roulette_machine = Roulette();
+    //pachinko_machine = Pachinko();
+    //coin_scanner = CoinScanner();
+    screen = new Display();
+    //power_button = PowerButton();
 
-    state = off;
+    //state = off;
 
-    srand(micros());
+    //srand(micros());
+}
+
+BopIt::~BopIt() {
+  delete screen;
 }
 
 /**

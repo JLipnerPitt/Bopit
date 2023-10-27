@@ -28,6 +28,7 @@ class BopIt {
         static const int time_limit = 10000;
 
         BopIt();
+        ~BopIt();
         BopItState get_curr_state() const;
 
         BopItState get_next_state();
@@ -45,6 +46,7 @@ class BopIt {
     private:
     
         BopItState state;
+        Display *screen;
         time_t current_time;
         time_t start_time;
 
