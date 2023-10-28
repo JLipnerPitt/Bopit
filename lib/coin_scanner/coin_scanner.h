@@ -4,6 +4,7 @@
 class CoinScanner {
     private:
         int device;
+        int pin;
     public:
         float balance;
 

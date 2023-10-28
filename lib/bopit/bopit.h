@@ -9,12 +9,14 @@
 #include <roulette.h>
 #include <pachinko.h>
 #include <coin_scanner.h>
+#include <Arduino.h>
 
 const int POWER_BUTTON_PIN = 7;
 
 enum BopItState {
     off,
     awaiting_coin,
+    start,
     slots,
     pachinko,
     roulette,
@@ -30,9 +32,9 @@ class BopIt {
         BopIt();
         ~BopIt();
         BopItState get_curr_state() const;
-
         BopItState get_next_state();
         void update_state();
+        void set_state(BopItState);
         void update_time();
 
         /* interfaces */

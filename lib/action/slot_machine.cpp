@@ -5,7 +5,7 @@
 */
 SlotMachine::SlotMachine() {
     in_progress = false;
-    pinMode(lever_pin, INPUT);
+    //pinMode(lever_pin, INPUT);
 }
 
 /**

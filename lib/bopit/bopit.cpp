@@ -5,11 +5,18 @@
  * @returns bopit instance
 */
 BopIt::BopIt() {
+    // setting up display
+    screen = new Display();
+    screen->start_screen();
+
+    // setting up coin scanner
+    coin_scanner = CoinScanner();
+
+    // setting up joystick
+    pachinko_machine = Pachinko();
     //slot_machine = SlotMachine();
     //roulette_machine = Roulette();
     //pachinko_machine = Pachinko();
-    //coin_scanner = CoinScanner();
-    screen = new Display();
     //power_button = PowerButton();
 
     //state = off;
@@ -142,6 +149,10 @@ void BopIt::update_state() {
     state = get_next_state();
 }
 
+void BopIt::set_state(BopItState s) {
+    state = s;
+}
+
 /**
  * @brief   updates internal time value (in ms) use arduino millis() function
 */
@@ -172,13 +183,13 @@ time_t BopIt::get_timer_delta() const {
 BopItState BopIt::select_random_game() {
     switch (rand()%3) {
         case 0: 
-            slot_machine.start();
+            //slot_machine.start();
             return slots;
         case 1: 
-            pachinko_machine.start();
+            //pachinko_machine.start();
             return pachinko;
         case 2: 
-            roulette_machine.start();
+            //roulette_machine.start();
             return roulette;
     }
 }
